@@ -55,10 +55,7 @@ public class Ejemplo3 {
             conexion1 = DriverManager.getConnection(url, Usuario, password);
             statement = conexion1.createStatement();
             rs = statement.executeQuery("SELECT * FROM datos_usuarios");
-            while(rs.next()){
-             System.out.println(rs.getString("Nombre"));
-            }
-          
+ 
             String sql = "UPDATE `datos_usuarios` SET `Nombre` = '"+ nombre +"' WHERE `datos_usuarios`.`ID` = "+ id + "; ";
             statement.execute(sql);
         } catch (SQLException ex) {
@@ -91,5 +88,25 @@ public class Ejemplo3 {
             Logger.getLogger(Ejemplo3.class.getName()).log(Level.SEVERE, null, ex);
         }
     
+    }
+    public void eliminar(String q){
+        String Usuario = "root";
+        String password = "";
+        String url = "jdbc:mysql://localhost:3306/jdbc_prueba1";
+        Connection conexion1;
+        Statement statement;
+        ResultSet rs;
+        String id = q;
+    
+     try {
+         conexion1 = DriverManager.getConnection(url, Usuario, password);
+         statement = conexion1.createStatement();
+         rs = statement.executeQuery("SELECT * FROM datos_usuarios");
+          String sql = "DELETE FROM datos_usuarios WHERE `datos_usuarios`.`ID` = "+id+"";
+         statement.execute(sql);
+     } catch (SQLException ex) {
+         Logger.getLogger(Ejemplo3.class.getName()).log(Level.SEVERE, null, ex);
+     }
+            
     }
 }
