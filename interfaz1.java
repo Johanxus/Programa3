@@ -123,7 +123,9 @@ public class interfaz1 extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void ELIMINARActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ELIMINARActionPerformed
-        // TODO add your handling code here:
+        interfaz5 a = new interfaz5();
+        a.setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_ELIMINARActionPerformed
 
     private void AÑADIRActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AÑADIRActionPerformed
